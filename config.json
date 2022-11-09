@@ -1,7 +1,7 @@
 {
-    "TOKEN": "MTAzODQwMDkzMzYxMDEyNzQ0MQ.GFGdEG.nBkKHO9Yp-akhJsixVDmwk8dgE52yxXD7em5MA",
+    "TOKEN": "<token>",
     "PREFIX": ".",
-    "dblink": "mongodb://admin:3L2JDRNAMF5WWFLQ@dono-01.danbot.host:1421/?authSource=admin",
+    "dblink": "<db string>",
     "admin": ["913321592384286760"],
     "logschannel": "1038401385097605160",
     "wlcchannel": "1035828727701061632",
