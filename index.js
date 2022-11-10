@@ -12,11 +12,6 @@ const mongoose = require("mongoose");
 //Bot
 const intents = new discord.Intents(32767);
 const client = new discord.Client({ intents, partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
-//Models/Schemas
-const snipeExist = require("./models/snipes.js");
-const snipeSchema = require("./models/snipes.js");
-const lastLeave = require("./models/lastLeave.js");
-const lastSchema = require("./models/lastLeave.js");
 //Utils
 const { MessageEmbed } = require("discord.js");
 //Bad words Russian
@@ -45,7 +40,6 @@ client.on("error", console.error);
 //Collections and maps
 client.commands = new discord.Collection();
 client.prefix = PREFIX;
-client.aliases = new discord.Collection();
 
 //Loading files thru FS package
 const cmdFiles = readdirSync(join(__dirname, "commands")).filter(file =>
@@ -89,11 +83,9 @@ client.on("message", message => {
       client.commands.get(command).execute(client, message, args);
       
     } catch (err) {
-      //If bot catches a error from Message event it sends to console
+      //On error print output
       console.log(err);
     }
   }
 });
-
-//On Messagedelete event is used for snipe command to catch users!
 client.login(TOKEN);
