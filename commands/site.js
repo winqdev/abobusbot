@@ -1,12 +1,15 @@
+//Website activity checker
 const axios = require("axios");
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "site",
     async execute(client, message, args) {
+
+    let weblink = "<your web>"
         
         let data = null;
-await axios.get("http://anketa.abobus.ga").then(() => data = true).catch((err)=>{console.log(err.response)})
+await axios.get(weblink).then(() => data = true).catch((err)=>{console.log(err.response)})
 
  if(!data) {
    let embed = new MessageEmbed()
